@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Курсовая работа\agency\agency\bin\Debug\agency.exe.config
+C:\Users\User\Desktop\Курсовая работа\agency\agency\bin\Debug\agency.exe
+C:\Users\User\Desktop\Курсовая работа\agency\agency\bin\Debug\agency.pdb
+C:\Users\User\Desktop\Курсовая работа\agency\agency\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.Form1.resources
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.Properties.Resources.resources
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.csproj.CopyComplete
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.exe
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.pdb
