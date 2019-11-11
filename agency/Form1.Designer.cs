@@ -42,23 +42,25 @@
             // enterButton
             // 
             this.enterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(95)))), ((int)(((byte)(92)))));
+            this.enterButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enterButton.FlatAppearance.BorderSize = 0;
             this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enterButton.ForeColor = System.Drawing.Color.White;
-            this.enterButton.Location = new System.Drawing.Point(450, 370);
+            this.enterButton.Location = new System.Drawing.Point(449, 355);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(93, 29);
             this.enterButton.TabIndex = 9;
             this.enterButton.Text = "Войти";
             this.enterButton.UseVisualStyleBackColor = false;
+            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(347, 214);
+            this.label1.Location = new System.Drawing.Point(346, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 17);
             this.label1.TabIndex = 8;
@@ -113,7 +115,7 @@
             this.loginInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.loginInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.loginInput.isPassword = false;
-            this.loginInput.Location = new System.Drawing.Point(311, 248);
+            this.loginInput.Location = new System.Drawing.Point(310, 233);
             this.loginInput.Margin = new System.Windows.Forms.Padding(4);
             this.loginInput.Name = "loginInput";
             this.loginInput.Size = new System.Drawing.Size(370, 44);
@@ -129,8 +131,8 @@
             this.passwordInput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passwordInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.passwordInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.passwordInput.isPassword = false;
-            this.passwordInput.Location = new System.Drawing.Point(311, 300);
+            this.passwordInput.isPassword = true;
+            this.passwordInput.Location = new System.Drawing.Point(310, 285);
             this.passwordInput.Margin = new System.Windows.Forms.Padding(4);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(370, 44);
