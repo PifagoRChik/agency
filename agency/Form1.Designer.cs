@@ -39,13 +39,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.registrationLabel = new System.Windows.Forms.Label();
             this.registrationPanel = new System.Windows.Forms.Panel();
-            this.newLoginInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.newPasswordInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.registrationButton = new System.Windows.Forms.Button();
             this.closeRegistration = new System.Windows.Forms.PictureBox();
-            this.verificationCodeInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.registrationButton = new System.Windows.Forms.Button();
             this.verificationLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.verificationCodeInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.newPasswordSecondInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.newPasswordInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.newLoginInput = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.topPanel.SuspendLayout();
             this.registrationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeRegistration)).BeginInit();
@@ -177,11 +181,16 @@
             // 
             // registrationPanel
             // 
+            this.registrationPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.registrationPanel.Controls.Add(this.closeRegistration);
             this.registrationPanel.Controls.Add(this.registrationButton);
             this.registrationPanel.Controls.Add(this.verificationLabel);
+            this.registrationPanel.Controls.Add(this.label6);
+            this.registrationPanel.Controls.Add(this.label5);
+            this.registrationPanel.Controls.Add(this.label4);
             this.registrationPanel.Controls.Add(this.label3);
             this.registrationPanel.Controls.Add(this.verificationCodeInput);
+            this.registrationPanel.Controls.Add(this.newPasswordSecondInput);
             this.registrationPanel.Controls.Add(this.newPasswordInput);
             this.registrationPanel.Controls.Add(this.newLoginInput);
             this.registrationPanel.Location = new System.Drawing.Point(113, 71);
@@ -189,67 +198,6 @@
             this.registrationPanel.Size = new System.Drawing.Size(767, 492);
             this.registrationPanel.TabIndex = 11;
             this.registrationPanel.Visible = false;
-            // 
-            // newLoginInput
-            // 
-            this.newLoginInput.BorderColorFocused = System.Drawing.Color.Blue;
-            this.newLoginInput.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.newLoginInput.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.newLoginInput.BorderThickness = 3;
-            this.newLoginInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.newLoginInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.newLoginInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.newLoginInput.isPassword = false;
-            this.newLoginInput.Location = new System.Drawing.Point(201, 144);
-            this.newLoginInput.Margin = new System.Windows.Forms.Padding(4);
-            this.newLoginInput.Name = "newLoginInput";
-            this.newLoginInput.Size = new System.Drawing.Size(370, 44);
-            this.newLoginInput.TabIndex = 0;
-            this.newLoginInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // newPasswordInput
-            // 
-            this.newPasswordInput.BorderColorFocused = System.Drawing.Color.Blue;
-            this.newPasswordInput.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.newPasswordInput.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.newPasswordInput.BorderThickness = 3;
-            this.newPasswordInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.newPasswordInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.newPasswordInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.newPasswordInput.isPassword = false;
-            this.newPasswordInput.Location = new System.Drawing.Point(201, 203);
-            this.newPasswordInput.Margin = new System.Windows.Forms.Padding(4);
-            this.newPasswordInput.Name = "newPasswordInput";
-            this.newPasswordInput.Size = new System.Drawing.Size(370, 44);
-            this.newPasswordInput.TabIndex = 0;
-            this.newPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(266, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Введите почту и придумайте пароль";
-            // 
-            // registrationButton
-            // 
-            this.registrationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(95)))), ((int)(((byte)(92)))));
-            this.registrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registrationButton.FlatAppearance.BorderSize = 0;
-            this.registrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registrationButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registrationButton.ForeColor = System.Drawing.Color.White;
-            this.registrationButton.Location = new System.Drawing.Point(260, 265);
-            this.registrationButton.Name = "registrationButton";
-            this.registrationButton.Size = new System.Drawing.Size(250, 29);
-            this.registrationButton.TabIndex = 10;
-            this.registrationButton.Text = "Зарегистрироваться";
-            this.registrationButton.UseVisualStyleBackColor = false;
-            this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
             // 
             // closeRegistration
             // 
@@ -264,6 +212,77 @@
             this.closeRegistration.TabStop = false;
             this.closeRegistration.Click += new System.EventHandler(this.closeRegistration_Click);
             // 
+            // registrationButton
+            // 
+            this.registrationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(95)))), ((int)(((byte)(92)))));
+            this.registrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registrationButton.FlatAppearance.BorderSize = 0;
+            this.registrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registrationButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registrationButton.ForeColor = System.Drawing.Color.White;
+            this.registrationButton.Location = new System.Drawing.Point(260, 308);
+            this.registrationButton.Name = "registrationButton";
+            this.registrationButton.Size = new System.Drawing.Size(250, 29);
+            this.registrationButton.TabIndex = 10;
+            this.registrationButton.Text = "Зарегистрироваться";
+            this.registrationButton.UseVisualStyleBackColor = false;
+            this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
+            // 
+            // verificationLabel
+            // 
+            this.verificationLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.verificationLabel.ForeColor = System.Drawing.Color.Silver;
+            this.verificationLabel.Location = new System.Drawing.Point(241, 373);
+            this.verificationLabel.Name = "verificationLabel";
+            this.verificationLabel.Size = new System.Drawing.Size(191, 41);
+            this.verificationLabel.TabIndex = 9;
+            this.verificationLabel.Text = "Мы выслали вам на почту код подтверждения";
+            this.verificationLabel.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(76, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Пароль еще раз";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Location = new System.Drawing.Point(137, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Пароль";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Location = new System.Drawing.Point(148, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Почта";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(266, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(244, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Введите почту и придумайте пароль";
+            // 
             // verificationCodeInput
             // 
             this.verificationCodeInput.BorderColorFocused = System.Drawing.Color.Blue;
@@ -274,24 +293,65 @@
             this.verificationCodeInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.verificationCodeInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.verificationCodeInput.isPassword = false;
-            this.verificationCodeInput.Location = new System.Drawing.Point(439, 327);
+            this.verificationCodeInput.Location = new System.Drawing.Point(439, 370);
             this.verificationCodeInput.Margin = new System.Windows.Forms.Padding(4);
             this.verificationCodeInput.Name = "verificationCodeInput";
             this.verificationCodeInput.Size = new System.Drawing.Size(101, 44);
             this.verificationCodeInput.TabIndex = 0;
             this.verificationCodeInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.verificationCodeInput.Visible = false;
+            this.verificationCodeInput.OnValueChanged += new System.EventHandler(this.verificationCodeInput_OnValueChanged);
             // 
-            // verificationLabel
+            // newPasswordSecondInput
             // 
-            this.verificationLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.verificationLabel.ForeColor = System.Drawing.Color.Silver;
-            this.verificationLabel.Location = new System.Drawing.Point(241, 330);
-            this.verificationLabel.Name = "verificationLabel";
-            this.verificationLabel.Size = new System.Drawing.Size(191, 41);
-            this.verificationLabel.TabIndex = 9;
-            this.verificationLabel.Text = "Мы выслали вам на почту код подтверждения";
-            this.verificationLabel.Visible = false;
+            this.newPasswordSecondInput.BorderColorFocused = System.Drawing.Color.Blue;
+            this.newPasswordSecondInput.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newPasswordSecondInput.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.newPasswordSecondInput.BorderThickness = 3;
+            this.newPasswordSecondInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newPasswordSecondInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.newPasswordSecondInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newPasswordSecondInput.isPassword = true;
+            this.newPasswordSecondInput.Location = new System.Drawing.Point(201, 255);
+            this.newPasswordSecondInput.Margin = new System.Windows.Forms.Padding(4);
+            this.newPasswordSecondInput.Name = "newPasswordSecondInput";
+            this.newPasswordSecondInput.Size = new System.Drawing.Size(370, 44);
+            this.newPasswordSecondInput.TabIndex = 0;
+            this.newPasswordSecondInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // newPasswordInput
+            // 
+            this.newPasswordInput.BorderColorFocused = System.Drawing.Color.Blue;
+            this.newPasswordInput.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newPasswordInput.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.newPasswordInput.BorderThickness = 3;
+            this.newPasswordInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newPasswordInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.newPasswordInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newPasswordInput.isPassword = true;
+            this.newPasswordInput.Location = new System.Drawing.Point(201, 203);
+            this.newPasswordInput.Margin = new System.Windows.Forms.Padding(4);
+            this.newPasswordInput.Name = "newPasswordInput";
+            this.newPasswordInput.Size = new System.Drawing.Size(370, 44);
+            this.newPasswordInput.TabIndex = 0;
+            this.newPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // newLoginInput
+            // 
+            this.newLoginInput.BorderColorFocused = System.Drawing.Color.Blue;
+            this.newLoginInput.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newLoginInput.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.newLoginInput.BorderThickness = 3;
+            this.newLoginInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newLoginInput.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.newLoginInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newLoginInput.isPassword = false;
+            this.newLoginInput.Location = new System.Drawing.Point(201, 150);
+            this.newLoginInput.Margin = new System.Windows.Forms.Padding(4);
+            this.newLoginInput.Name = "newLoginInput";
+            this.newLoginInput.Size = new System.Drawing.Size(370, 44);
+            this.newLoginInput.TabIndex = 0;
+            this.newLoginInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Form1
             // 
@@ -338,6 +398,10 @@
         private System.Windows.Forms.PictureBox closeRegistration;
         private System.Windows.Forms.Label verificationLabel;
         private Bunifu.Framework.UI.BunifuMetroTextbox verificationCodeInput;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox newPasswordSecondInput;
     }
 }
 

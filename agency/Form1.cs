@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Security.Cryptography;
+using System.Net.Mail;
 
 namespace agency
 {
@@ -17,6 +18,8 @@ namespace agency
         // Подключение БД
         public static string connectstring = "provider=microsoft.jet.oledb.4.0;data source=agency.mdb;";
         public OleDbConnection myConnection;
+        Random random = new Random();
+        string code = "";
         public Form1()
         {
             InitializeComponent();
@@ -89,14 +92,66 @@ namespace agency
 
         private void registrationButton_Click(object sender, EventArgs e)
         {
+            myConnection = new OleDbConnection(connectstring);
+            myConnection.Open();
 
+            string quy = $"SELECT Логин FROM Пароли WHERE Логин = '{newLoginInput.Text}'";
+            OleDbCommand command = new OleDbCommand(quy, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            string loginFromDatabase = "";
+            while (reader.Read())
+            {
+                loginFromDatabase = reader[0].ToString();
+            }
+            reader.Close();
+            myConnection.Close();
+            if(loginFromDatabase != "")
+            {
+                MessageBox.Show("Учетная запись с таким логином уже существует", "Ошибка");
+            }
+            else
+            {
+                if (newPasswordInput.Text == newPasswordSecondInput.Text)
+                {
+                    verificationCodeInput.Visible = true;
+                    verificationLabel.Visible = true;
+                    code = Convert.ToString(random.Next(10000, 99999));
+                    MailMessage message = new MailMessage("newhouse.bonch@bk.ru", newLoginInput.Text, "Подтверждение регистрации", "Ваш код подтверждения - " + code);
+                    SmtpClient client = new SmtpClient("smtp.mail.ru");
+                    client.Port = 587;
+                    client.Credentials = new System.Net.NetworkCredential("newhouse.bonch@bk.ru", "lZb43rQv27");
+                    client.EnableSsl = true;
+                    client.Send(message);
+                }
+                else
+                {
+                    MessageBox.Show("Введите пароль еще раз", "Пароли не совпадают");
+                }
+            }
         }
 
         private void closeRegistration_Click(object sender, EventArgs e)
         {
+            newLoginInput.Text = "";
+            newPasswordInput.Text = "";
+            newPasswordSecondInput.Text = "";
+            verificationCodeInput.Text = "";
             registrationPanel.Visible = false;
             verificationCodeInput.Visible = false;
             verificationLabel.Visible = false;
+        }
+
+        private void verificationCodeInput_OnValueChanged(object sender, EventArgs e)
+        {
+            if (code == verificationCodeInput.Text)
+            {
+                myConnection = new OleDbConnection(connectstring);
+                myConnection.Open();
+                string quy = $"INSERT INTO Пароли (Логин, Пароль) VALUES ('{newLoginInput.Text}', '{GetHash(newPasswordInput.Text)}')";
+                OleDbCommand command = new OleDbCommand(quy, myConnection);
+                command.ExecuteNonQuery();
+                closeRegistration_Click(sender, e);
+            }
         }
     }
 }
