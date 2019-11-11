@@ -81,5 +81,22 @@ namespace agency
             }
             myConnection.Close();
         }
+
+        private void registrationLabel_Click(object sender, EventArgs e)
+        {
+            registrationPanel.Visible = true;
+        }
+
+        private void registrationButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeRegistration_Click(object sender, EventArgs e)
+        {
+            registrationPanel.Visible = false;
+            verificationCodeInput.Visible = false;
+            verificationLabel.Visible = false;
+        }
     }
 }
