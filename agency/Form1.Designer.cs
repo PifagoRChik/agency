@@ -204,7 +204,7 @@
             this.closeRegistration.BackColor = System.Drawing.Color.LightSalmon;
             this.closeRegistration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeRegistration.Image = ((System.Drawing.Image)(resources.GetObject("closeRegistration.Image")));
-            this.closeRegistration.Location = new System.Drawing.Point(744, 3);
+            this.closeRegistration.Location = new System.Drawing.Point(744, 1);
             this.closeRegistration.Name = "closeRegistration";
             this.closeRegistration.Size = new System.Drawing.Size(20, 20);
             this.closeRegistration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

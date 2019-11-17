@@ -50,8 +50,10 @@ namespace agency
         {
             myConnection = new OleDbConnection(connectstring);
             myConnection.Open();
-            string login = loginInput.Text;
-            string password = GetHash(passwordInput.Text);
+            //string login = loginInput.Text;
+            //string password = GetHash(passwordInput.Text);
+            string login = "voznesenskiy.shura@gmail.com";
+            string password = GetHash("lZb43rQv27");
             string quy = $"SELECT Логин, Пароль FROM Пароли WHERE Логин = '{login}'";
             OleDbCommand command = new OleDbCommand(quy, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
@@ -71,10 +73,9 @@ namespace agency
             }
             else if (login == loginFromDatabase && password == passwordFromDatabase)
             {
-                MessageBox.Show("qq");
-                //mainForm newf = new mainForm();
-                //newf.Show();
-                //this.Hide();
+                mainForm newf = new mainForm();
+                newf.Show();
+                this.Hide();
                 myConnection.Close();
             }
             else
