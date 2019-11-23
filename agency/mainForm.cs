@@ -12,9 +12,11 @@ namespace agency
 {
     public partial class mainForm : Form
     {
+        
         public mainForm()
         {
             InitializeComponent();
+           
         }
 
         private void minimizeButton_Click(object sender, EventArgs e)
@@ -25,6 +27,14 @@ namespace agency
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            if (menuPanel.Visible == false)
+                bunifuTransition1.ShowSync(menuPanel);
+            else if (menuPanel.Visible == true)
+                bunifuTransition1.HideSync(menuPanel);
         }
     }
 }

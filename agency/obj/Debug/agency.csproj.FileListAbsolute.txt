@@ -10,3 +10,4 @@ C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agen
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.exe
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.pdb
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.mainForm.resources
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.userControls.allTasks.resources
