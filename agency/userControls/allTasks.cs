@@ -15,11 +15,14 @@ namespace agency.userControls
     {
         public static string connectstring = "provider=microsoft.jet.oledb.4.0;data source=agency.mdb;";
         public OleDbConnection myConnection;
+        public string taskCode = "";
+        public string managerCode = "";
         public allTasks()
         {
             InitializeComponent();
             myConnection = new OleDbConnection(connectstring);
             zapol();
+            zapolManager();
         }
         public void zapol()
         {
@@ -63,7 +66,7 @@ namespace agency.userControls
 
             foreach (string[] s in data)
             {
-                dataGridView1.Rows.Add(s);
+                dataGridView2.Rows.Add(s);
             }
             myConnection.Close();
         }
@@ -71,30 +74,56 @@ namespace agency.userControls
         private void updateButton_Click(object sender, EventArgs e)
         {
             zapol();
+            zapolManager();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 1)
+            myConnection.Open();
+            taskCode = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string quy = $"select * from Объявления where Код = {taskCode}";
+            OleDbCommand command = new OleDbCommand(quy, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
             {
-
-
-                panelTask.Visible = true;
+                buildPhoto.ImageLocation = reader[4].ToString();
+                captchaText.Text = reader[1].ToString();
+                typeTask.Text = reader[2].ToString();
+                squareLabel.Text = reader[3].ToString();
             }
-            else
-            {
-                MessageBox.Show("Выберите, пожалуйста, объявление", "Ошибка");
-            }
+            reader.Close();
+            myConnection.Close();
+            panelTask.Visible = true;
         }
 
         private void addManager_Click(object sender, EventArgs e)
         {
-
+            panelManagerAll.Visible = true;
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            managerCode = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string quy = $"insert into Заявки (Объявление, Сотрудник) values ({taskCode}, {managerCode})";
+            myConnection.Open();
+            OleDbCommand command = new OleDbCommand(quy, myConnection);
+            command.ExecuteNonQuery();
+            panelManagerAll.Visible = false;
+            panelTask.Visible = false;
+            myConnection.Close();
+        }
 
+        private void closePanelTask_Click(object sender, EventArgs e)
+        {
+            panelTask.Visible = false;
+            panelManagerAll.Visible = false;
+            zapol();
+            zapolManager();
+        }
+
+        private void panelManagerClose_Click(object sender, EventArgs e)
+        {
+            panelManagerAll.Visible = false;
         }
     }
 }
