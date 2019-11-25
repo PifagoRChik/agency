@@ -41,6 +41,7 @@ namespace agency
         {
             allManagers1.Visible = false;
             allTasks1.Visible = true;
+            helpForm1.Visible = false;
             addTask1.Visible = false;
             sidePanel.Height = allButton.Height;
             sidePanel.Top = allButton.Top;
@@ -50,7 +51,8 @@ namespace agency
         private void addButton_Click(object sender, EventArgs e)
         {
             allTasks1.Visible = false;
-            allManagers1.Visible = false;
+            allManagers1.Visible = false; 
+            helpForm1.Visible = false;
             addTask1.Visible = true;
             sidePanel.Height = addButton.Height;
             sidePanel.Top = addButton.Top;
@@ -60,10 +62,22 @@ namespace agency
         private void managersButton_Click(object sender, EventArgs e)
         {
             allTasks1.Visible = false;
+            helpForm1.Visible = false;
             addTask1.Visible = false;
             allManagers1.Visible = true;
             sidePanel.Height = managersButton.Height;
             sidePanel.Top = managersButton.Top;
+            bunifuTransition1.HideSync(menuPanel);
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            allTasks1.Visible = false;
+            addTask1.Visible = false;
+            allManagers1.Visible = false;
+            helpForm1.Visible = true;
+            sidePanel.Height = helpButton.Height;
+            sidePanel.Top = helpButton.Top;
             bunifuTransition1.HideSync(menuPanel);
         }
     }

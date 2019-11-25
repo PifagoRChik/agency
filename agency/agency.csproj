@@ -82,6 +82,12 @@
     <Compile Include="userControls\allTasks.Designer.cs">
       <DependentUpon>allTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControls\helpForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\helpForm.Designer.cs">
+      <DependentUpon>helpForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\allTasks.resx">
       <DependentUpon>allTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\helpForm.resx">
+      <DependentUpon>helpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

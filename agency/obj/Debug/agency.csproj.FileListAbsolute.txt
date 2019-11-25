@@ -13,3 +13,4 @@ C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agen
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.userControls.addTask.resources
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.userControls.allManagers.resources
 C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Курсовая работа\agency\agency\obj\Debug\agency.userControls.helpForm.resources

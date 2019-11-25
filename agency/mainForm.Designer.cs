@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             this.topPanel = new System.Windows.Forms.Panel();
             this.menuButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -39,12 +39,14 @@
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.menuPanel = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.managersButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.allButton = new System.Windows.Forms.Button();
             this.addTask1 = new agency.userControls.addTask();
             this.allTasks1 = new agency.userControls.allTasks();
             this.allManagers1 = new agency.userControls.allManagers();
-            this.managersButton = new System.Windows.Forms.Button();
+            this.helpForm1 = new agency.userControls.helpForm();
+            this.helpButton = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -118,26 +120,27 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(95)))), ((int)(((byte)(92)))));
+            this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.sidePanel);
             this.menuPanel.Controls.Add(this.managersButton);
             this.menuPanel.Controls.Add(this.addButton);
@@ -158,6 +161,24 @@
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(10, 44);
             this.sidePanel.TabIndex = 3;
+            // 
+            // managersButton
+            // 
+            this.managersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.managersButton, BunifuAnimatorNS.DecorationType.None);
+            this.managersButton.FlatAppearance.BorderSize = 0;
+            this.managersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.managersButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.managersButton.ForeColor = System.Drawing.Color.White;
+            this.managersButton.Image = ((System.Drawing.Image)(resources.GetObject("managersButton.Image")));
+            this.managersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.managersButton.Location = new System.Drawing.Point(15, 150);
+            this.managersButton.Name = "managersButton";
+            this.managersButton.Size = new System.Drawing.Size(219, 44);
+            this.managersButton.TabIndex = 2;
+            this.managersButton.Text = " Менеджеры";
+            this.managersButton.UseVisualStyleBackColor = true;
+            this.managersButton.Click += new System.EventHandler(this.managersButton_Click);
             // 
             // addButton
             // 
@@ -221,23 +242,33 @@
             this.allManagers1.TabIndex = 12;
             this.allManagers1.Visible = false;
             // 
-            // managersButton
+            // helpForm1
             // 
-            this.managersButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.managersButton, BunifuAnimatorNS.DecorationType.None);
-            this.managersButton.FlatAppearance.BorderSize = 0;
-            this.managersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.managersButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.managersButton.ForeColor = System.Drawing.Color.White;
-            this.managersButton.Image = ((System.Drawing.Image)(resources.GetObject("managersButton.Image")));
-            this.managersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.managersButton.Location = new System.Drawing.Point(15, 150);
-            this.managersButton.Name = "managersButton";
-            this.managersButton.Size = new System.Drawing.Size(219, 44);
-            this.managersButton.TabIndex = 2;
-            this.managersButton.Text = " Менеджеры";
-            this.managersButton.UseVisualStyleBackColor = true;
-            this.managersButton.Click += new System.EventHandler(this.managersButton_Click);
+            this.bunifuTransition1.SetDecoration(this.helpForm1, BunifuAnimatorNS.DecorationType.None);
+            this.helpForm1.Location = new System.Drawing.Point(0, 35);
+            this.helpForm1.Name = "helpForm1";
+            this.helpForm1.Size = new System.Drawing.Size(1095, 610);
+            this.helpForm1.TabIndex = 13;
+            this.helpForm1.Visible = false;
+            // 
+            // helpButton
+            // 
+            this.helpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.helpButton, BunifuAnimatorNS.DecorationType.None);
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.helpButton.ForeColor = System.Drawing.Color.White;
+            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
+            this.helpButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.helpButton.Location = new System.Drawing.Point(15, 554);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(219, 44);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "               Помощь";
+            this.helpButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // mainForm
             // 
@@ -245,6 +276,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 645);
             this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.helpForm1);
             this.Controls.Add(this.allManagers1);
             this.Controls.Add(this.addTask1);
             this.Controls.Add(this.allTasks1);
@@ -276,5 +308,7 @@
         private System.Windows.Forms.Button allButton;
         private userControls.allManagers allManagers1;
         private System.Windows.Forms.Button managersButton;
+        private System.Windows.Forms.Button helpButton;
+        private userControls.helpForm helpForm1;
     }
 }
