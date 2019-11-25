@@ -38,6 +38,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.helpButton = new System.Windows.Forms.Button();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.managersButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.allTasks1 = new agency.userControls.allTasks();
             this.allManagers1 = new agency.userControls.allManagers();
             this.helpForm1 = new agency.userControls.helpForm();
-            this.helpButton = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +153,25 @@
             this.menuPanel.TabIndex = 9;
             this.menuPanel.Visible = false;
             // 
+            // helpButton
+            // 
+            this.helpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.helpButton, BunifuAnimatorNS.DecorationType.None);
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.helpButton.ForeColor = System.Drawing.Color.White;
+            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
+            this.helpButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.helpButton.Location = new System.Drawing.Point(15, 554);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(219, 44);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "               Помощь";
+            this.helpButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.AliceBlue;
@@ -251,25 +270,6 @@
             this.helpForm1.TabIndex = 13;
             this.helpForm1.Visible = false;
             // 
-            // helpButton
-            // 
-            this.helpButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.helpButton, BunifuAnimatorNS.DecorationType.None);
-            this.helpButton.FlatAppearance.BorderSize = 0;
-            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.helpButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.helpButton.ForeColor = System.Drawing.Color.White;
-            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
-            this.helpButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.helpButton.Location = new System.Drawing.Point(15, 554);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(219, 44);
-            this.helpButton.TabIndex = 4;
-            this.helpButton.Text = "               Помощь";
-            this.helpButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.helpButton.UseVisualStyleBackColor = true;
-            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +283,7 @@
             this.Controls.Add(this.topPanel);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainForm";
