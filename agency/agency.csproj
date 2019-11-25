@@ -64,6 +64,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControls\addTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\addTask.Designer.cs">
+      <DependentUpon>addTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControls\allTasks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="userControls\addTask.resx">
+      <DependentUpon>addTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControls\allTasks.resx">
       <DependentUpon>allTasks.cs</DependentUpon>
     </EmbeddedResource>
