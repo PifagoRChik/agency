@@ -36,6 +36,7 @@
             this.addPhoto = new System.Windows.Forms.Button();
             this.photoBox = new System.Windows.Forms.PictureBox();
             this.addTaskButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.photoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,10 +136,21 @@
             this.addTaskButton.UseVisualStyleBackColor = false;
             this.addTaskButton.Click += new System.EventHandler(this.addTaskButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(474, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Добавление";
+            // 
             // addTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.photoBox);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.addPhoto);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.Button addPhoto;
         private System.Windows.Forms.PictureBox photoBox;
         private System.Windows.Forms.Button addTaskButton;
+        private System.Windows.Forms.Label label2;
     }
 }
