@@ -38,11 +38,13 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.allTasks1 = new agency.userControls.allTasks();
-            this.addTask1 = new agency.userControls.addTask();
-            this.allButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.addButton = new System.Windows.Forms.Button();
+            this.allButton = new System.Windows.Forms.Button();
+            this.addTask1 = new agency.userControls.addTask();
+            this.allTasks1 = new agency.userControls.allTasks();
+            this.allManagers1 = new agency.userControls.allManagers();
+            this.managersButton = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +139,7 @@
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(95)))), ((int)(((byte)(92)))));
             this.menuPanel.Controls.Add(this.sidePanel);
+            this.menuPanel.Controls.Add(this.managersButton);
             this.menuPanel.Controls.Add(this.addButton);
             this.menuPanel.Controls.Add(this.allButton);
             this.bunifuTransition1.SetDecoration(this.menuPanel, BunifuAnimatorNS.DecorationType.None);
@@ -147,40 +150,14 @@
             this.menuPanel.TabIndex = 9;
             this.menuPanel.Visible = false;
             // 
-            // allTasks1
+            // sidePanel
             // 
-            this.bunifuTransition1.SetDecoration(this.allTasks1, BunifuAnimatorNS.DecorationType.None);
-            this.allTasks1.Location = new System.Drawing.Point(0, 35);
-            this.allTasks1.Name = "allTasks1";
-            this.allTasks1.Size = new System.Drawing.Size(1095, 610);
-            this.allTasks1.TabIndex = 10;
-            // 
-            // addTask1
-            // 
-            this.bunifuTransition1.SetDecoration(this.addTask1, BunifuAnimatorNS.DecorationType.None);
-            this.addTask1.Location = new System.Drawing.Point(0, 35);
-            this.addTask1.Name = "addTask1";
-            this.addTask1.Size = new System.Drawing.Size(1095, 610);
-            this.addTask1.TabIndex = 11;
-            this.addTask1.Visible = false;
-            // 
-            // allButton
-            // 
-            this.allButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.allButton, BunifuAnimatorNS.DecorationType.None);
-            this.allButton.FlatAppearance.BorderSize = 0;
-            this.allButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.allButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.allButton.ForeColor = System.Drawing.Color.White;
-            this.allButton.Image = ((System.Drawing.Image)(resources.GetObject("allButton.Image")));
-            this.allButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.allButton.Location = new System.Drawing.Point(15, 50);
-            this.allButton.Name = "allButton";
-            this.allButton.Size = new System.Drawing.Size(222, 44);
-            this.allButton.TabIndex = 1;
-            this.allButton.Text = "       Все объявления";
-            this.allButton.UseVisualStyleBackColor = true;
-            this.allButton.Click += new System.EventHandler(this.allButton_Click);
+            this.sidePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.bunifuTransition1.SetDecoration(this.sidePanel, BunifuAnimatorNS.DecorationType.None);
+            this.sidePanel.Location = new System.Drawing.Point(3, 50);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(10, 44);
+            this.sidePanel.TabIndex = 3;
             // 
             // addButton
             // 
@@ -200,14 +177,67 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // sidePanel
+            // allButton
             // 
-            this.sidePanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.bunifuTransition1.SetDecoration(this.sidePanel, BunifuAnimatorNS.DecorationType.None);
-            this.sidePanel.Location = new System.Drawing.Point(3, 50);
-            this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(10, 44);
-            this.sidePanel.TabIndex = 3;
+            this.allButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.allButton, BunifuAnimatorNS.DecorationType.None);
+            this.allButton.FlatAppearance.BorderSize = 0;
+            this.allButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.allButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.allButton.ForeColor = System.Drawing.Color.White;
+            this.allButton.Image = ((System.Drawing.Image)(resources.GetObject("allButton.Image")));
+            this.allButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.allButton.Location = new System.Drawing.Point(15, 50);
+            this.allButton.Name = "allButton";
+            this.allButton.Size = new System.Drawing.Size(222, 44);
+            this.allButton.TabIndex = 1;
+            this.allButton.Text = "      Все объявления";
+            this.allButton.UseVisualStyleBackColor = true;
+            this.allButton.Click += new System.EventHandler(this.allButton_Click);
+            // 
+            // addTask1
+            // 
+            this.bunifuTransition1.SetDecoration(this.addTask1, BunifuAnimatorNS.DecorationType.None);
+            this.addTask1.Location = new System.Drawing.Point(0, 35);
+            this.addTask1.Name = "addTask1";
+            this.addTask1.Size = new System.Drawing.Size(1095, 610);
+            this.addTask1.TabIndex = 11;
+            this.addTask1.Visible = false;
+            // 
+            // allTasks1
+            // 
+            this.bunifuTransition1.SetDecoration(this.allTasks1, BunifuAnimatorNS.DecorationType.None);
+            this.allTasks1.Location = new System.Drawing.Point(0, 35);
+            this.allTasks1.Name = "allTasks1";
+            this.allTasks1.Size = new System.Drawing.Size(1095, 610);
+            this.allTasks1.TabIndex = 10;
+            // 
+            // allManagers1
+            // 
+            this.bunifuTransition1.SetDecoration(this.allManagers1, BunifuAnimatorNS.DecorationType.None);
+            this.allManagers1.Location = new System.Drawing.Point(0, 35);
+            this.allManagers1.Name = "allManagers1";
+            this.allManagers1.Size = new System.Drawing.Size(1095, 610);
+            this.allManagers1.TabIndex = 12;
+            this.allManagers1.Visible = false;
+            // 
+            // managersButton
+            // 
+            this.managersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.managersButton, BunifuAnimatorNS.DecorationType.None);
+            this.managersButton.FlatAppearance.BorderSize = 0;
+            this.managersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.managersButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.managersButton.ForeColor = System.Drawing.Color.White;
+            this.managersButton.Image = ((System.Drawing.Image)(resources.GetObject("managersButton.Image")));
+            this.managersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.managersButton.Location = new System.Drawing.Point(15, 150);
+            this.managersButton.Name = "managersButton";
+            this.managersButton.Size = new System.Drawing.Size(219, 44);
+            this.managersButton.TabIndex = 2;
+            this.managersButton.Text = " Менеджеры";
+            this.managersButton.UseVisualStyleBackColor = true;
+            this.managersButton.Click += new System.EventHandler(this.managersButton_Click);
             // 
             // mainForm
             // 
@@ -215,6 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 645);
             this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.allManagers1);
             this.Controls.Add(this.addTask1);
             this.Controls.Add(this.allTasks1);
             this.Controls.Add(this.topPanel);
@@ -243,5 +274,7 @@
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button allButton;
+        private userControls.allManagers allManagers1;
+        private System.Windows.Forms.Button managersButton;
     }
 }

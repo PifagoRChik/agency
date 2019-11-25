@@ -70,6 +70,12 @@
     <Compile Include="userControls\addTask.Designer.cs">
       <DependentUpon>addTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControls\allManagers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\allManagers.Designer.cs">
+      <DependentUpon>allManagers.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControls\allTasks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="userControls\addTask.resx">
       <DependentUpon>addTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\allManagers.resx">
+      <DependentUpon>allManagers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\allTasks.resx">
       <DependentUpon>allTasks.cs</DependentUpon>
