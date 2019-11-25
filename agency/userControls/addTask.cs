@@ -15,7 +15,7 @@ namespace agency.userControls
 {
     public partial class addTask : UserControl
     {
-        public static string connectstring = "provider=microsoft.jet.oledb.4.0;data source=comission.mdb;";
+        public static string connectstring = "provider=microsoft.jet.oledb.4.0;data source=agency.mdb;";
         public OleDbConnection myConnection;
         public string filePath = string.Empty;
         public addTask()
@@ -24,7 +24,14 @@ namespace agency.userControls
             typeTask.SelectedIndex = 0;
             myConnection = new OleDbConnection(connectstring);
         }
-
+        public void clearAll()
+        {
+            aboutTask.Text = "";
+            squareTextbox.Text = "";
+            typeTask.SelectedIndex = 0;
+            photoBox.Image = null;
+            photoBox.BorderStyle = BorderStyle.FixedSingle;
+        }
         private void addPhoto_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -46,15 +53,54 @@ namespace agency.userControls
 
         private void addTaskButton_Click(object sender, EventArgs e)
         {
-            string quy = "select";
-            if(aboutTask.Text == "" || squareTextbox.Text == "")
+            myConnection.Open();
+            
+            if (aboutTask.Text == "" || squareTextbox.Text == "")
             {
                 MessageBox.Show("Проверьте наличие всех внесенных данных", "Внимание");
             }
             else
             {
-                string path = $@"images\{passportInput.Text}";
+                string kost = "insert into Объявления (КраткоеОписание, ТипОбъявления, Площадь, Фото) values ('','','','')";
+                OleDbCommand kostCommand = new OleDbCommand(kost, myConnection);
+                kostCommand.ExecuteNonQuery();
 
+                string quy = "select top 1 Код from Объявления order by Код desc";
+                OleDbCommand command = new OleDbCommand(quy, myConnection);
+                OleDbDataReader reader = command.ExecuteReader();
+                string maxCode = "";
+                while (reader.Read())
+                {
+                    maxCode = reader[0].ToString();
+                }
+                reader.Close();
+
+                string path = $@"images\{maxCode}";
+                DirectoryInfo dirInfo = new DirectoryInfo(path);
+                if (!dirInfo.Exists)
+                {
+                    dirInfo.Create();
+                }
+                File.Copy(filePath, Path.Combine(path, "photo.jpg"), true);
+                string requestFinal = $"update Объявления set " +
+                    $"КраткоеОписание = '{aboutTask.Text}'," +
+                    $"ТипОбъявления = '{typeTask.SelectedItem.ToString()}'," +
+                    $"Площадь = '{squareTextbox.Text}'," +
+                    $"Фото = '{Path.Combine(path, "photo.jpg")}' where Код = {maxCode}";
+                OleDbCommand requestFinalCommand = new OleDbCommand(requestFinal, myConnection);
+                requestFinalCommand.ExecuteNonQuery();
+                MessageBox.Show("Успешно добавлено!", "Success");
+                clearAll();
+            }
+            myConnection.Close();
+        }
+
+        private void squareTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8)
+            {
+                e.Handled = true;
             }
         }
     }

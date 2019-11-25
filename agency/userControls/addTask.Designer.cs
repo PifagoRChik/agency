@@ -78,6 +78,7 @@
             this.squareTextbox.Name = "squareTextbox";
             this.squareTextbox.Size = new System.Drawing.Size(182, 27);
             this.squareTextbox.TabIndex = 13;
+            this.squareTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.squareTextbox_KeyPress);
             // 
             // label1
             // 
