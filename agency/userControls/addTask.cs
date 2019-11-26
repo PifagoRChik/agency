@@ -53,46 +53,54 @@ namespace agency.userControls
 
         private void addTaskButton_Click(object sender, EventArgs e)
         {
-            myConnection.Open();
+            try
+            {
+                if (aboutTask.Text == "" || squareTextbox.Text == "" || photoBox.Image == null)
+                {
+                    MessageBox.Show("Проверьте наличие всех внесенных данных", "Внимание");
+                }
+                else
+                {
+                    myConnection.Open();
+                    string kost = "insert into Объявления (КраткоеОписание, ТипОбъявления, Площадь, Фото) values ('','','','')";
+                    OleDbCommand kostCommand = new OleDbCommand(kost, myConnection);
+                    kostCommand.ExecuteNonQuery();
+
+                    string quy = "select top 1 Код from Объявления order by Код desc";
+                    OleDbCommand command = new OleDbCommand(quy, myConnection);
+                    OleDbDataReader reader = command.ExecuteReader();
+                    string maxCode = "";
+                    while (reader.Read())
+                    {
+                        maxCode = reader[0].ToString();
+                    }
+                    reader.Close();
+
+                    string path = $@"images\{maxCode}";
+                    DirectoryInfo dirInfo = new DirectoryInfo(path);
+                    if (!dirInfo.Exists)
+                    {
+                        dirInfo.Create();
+                    }
+                    File.Copy(filePath, Path.Combine(path, "photo.jpg"), true);
+                    string requestFinal = $"update Объявления set " +
+                        $"КраткоеОписание = '{aboutTask.Text}'," +
+                        $"ТипОбъявления = '{typeTask.SelectedItem.ToString()}'," +
+                        $"Площадь = '{squareTextbox.Text}'," +
+                        $"Фото = '{Path.Combine(path, "photo.jpg")}' where Код = {maxCode}";
+                    OleDbCommand requestFinalCommand = new OleDbCommand(requestFinal, myConnection);
+                    requestFinalCommand.ExecuteNonQuery();
+                    MessageBox.Show("Успешно добавлено!", "Success");
+                    clearAll();
+                    myConnection.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте правильность введенных данных либо обратитесь в техподдержку", "Ошибка");
+            }
             
-            if (aboutTask.Text == "" || squareTextbox.Text == "")
-            {
-                MessageBox.Show("Проверьте наличие всех внесенных данных", "Внимание");
-            }
-            else
-            {
-                string kost = "insert into Объявления (КраткоеОписание, ТипОбъявления, Площадь, Фото) values ('','','','')";
-                OleDbCommand kostCommand = new OleDbCommand(kost, myConnection);
-                kostCommand.ExecuteNonQuery();
-
-                string quy = "select top 1 Код from Объявления order by Код desc";
-                OleDbCommand command = new OleDbCommand(quy, myConnection);
-                OleDbDataReader reader = command.ExecuteReader();
-                string maxCode = "";
-                while (reader.Read())
-                {
-                    maxCode = reader[0].ToString();
-                }
-                reader.Close();
-
-                string path = $@"images\{maxCode}";
-                DirectoryInfo dirInfo = new DirectoryInfo(path);
-                if (!dirInfo.Exists)
-                {
-                    dirInfo.Create();
-                }
-                File.Copy(filePath, Path.Combine(path, "photo.jpg"), true);
-                string requestFinal = $"update Объявления set " +
-                    $"КраткоеОписание = '{aboutTask.Text}'," +
-                    $"ТипОбъявления = '{typeTask.SelectedItem.ToString()}'," +
-                    $"Площадь = '{squareTextbox.Text}'," +
-                    $"Фото = '{Path.Combine(path, "photo.jpg")}' where Код = {maxCode}";
-                OleDbCommand requestFinalCommand = new OleDbCommand(requestFinal, myConnection);
-                requestFinalCommand.ExecuteNonQuery();
-                MessageBox.Show("Успешно добавлено!", "Success");
-                clearAll();
-            }
-            myConnection.Close();
+            
         }
 
         private void squareTextbox_KeyPress(object sender, KeyPressEventArgs e)

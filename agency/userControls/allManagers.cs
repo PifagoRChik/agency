@@ -87,7 +87,6 @@ namespace agency.userControls
         {
             try
             {
-                
                 myConnection.Open();
                 string path = $@"images\managers\{managerCode}";
                 if (imageLocation == string.Empty)
